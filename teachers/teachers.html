@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="rtl-text">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> اكثر المشاريع تميزا</title>
+    <!-- ربط ملف CSS للثيم الأساسي -->
+    <link rel="stylesheet" href="style.css"> <!-- عدّل المسار حسب مكان ملف CSS الفعلي -->
+</head>
+<body>
+    <!-- الهيدر مع nav-toggle -->
+    <header>
+        <a href="../index.html" class="logo">Alhabib Software</a>
+
+        <nav class="navigation">
+            <a href="../who-are-we/who-are-we.html">من نحن؟</a>
+            <a href="../teachers/teachers.html">المشاريع الخاصة بنا</a>
+            <a href="../المقالات/المقالات.html">الأسئلة الشائعة عنا؟</a>
+        </nav>
+    </header>
+      <h1 class="section-title"></h1>
+
+<div class="faq-container">
+
+  <div class="faq-item">
+    <div class="faq-question">
+     ALHABIB AI 
+      <span class="arrow">▶</span>
+    </div>
+    <div class="faq-answer">
+     "هي منصة تعليميه رقميه ذكيه تعتمد على تقنيات الذكاء الاصطناعي , تحاكي دور المعلم البشري بطريقه تفاعليه وشخصيه تحتوي على معلميين افتراضيين تم تدريبهم على المنهج اليمني  "
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+     SIRAJ AI
+      <span class="arrow">▶</span>
+    </div>
+    <div class="faq-answer">
+      "مشروع ذكاء اصطناعي متطور يخدم جانب اللغة الانجليزيه لدى الطلاب في التعليم حيث يقوم بمساعدة الطلاب عن طريق استقبال استفساراتهم في مادة اللغه الانجليزيه  والاجابه عنها بكل وضوح وبساطه"
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+     الركن الثالث
+      <span class="arrow">▶</span>
+    </div>
+    <div class="faq-answer">
+   عباره عن برنامج ديني لحساب زكاة الفطر المقدره على كل فرد عن طريق واجهه رسوميه سهلة المحتويات بسيطة التركيب صممت لكي يدخلها ويستفيد منها اكبر كميه من المسلمين , معتمدة من قبل مجلس الافتاء بمدينة المكلا (( مجلس العلامه الحداد ))
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+     منصة افق التعليميه 
+      <span class="arrow">▶</span>
+    </div>
+    <div class="faq-answer">
+     هي المنصة التي قمت ببرمجتها اثناء تواجدي في الهاكثون الخليجي لتوظيف الذكاء الاصطناعي بمملكة البحرين مع فريق الهاكثون الخاص بنا 
+    </div>
+  </div>
+
+</div>
+    <footer>
+        <p>© 2025 Alhabib Software. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- جافاسكربت لفتح/إغلاق القائمة في الجوال -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.navigation');
+      navToggle.addEventListener('click', function() {
+        nav.classList.toggle('open');
+        navToggle.classList.toggle('open');
+      });
+      // إغلاق القائمة عند الضغط على رابط
+      document.querySelectorAll('.navigation a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            navToggle.classList.remove('open');
+          }
+        });
+      });
+    });
+
+
+  // اختر كل الأسهم فقط واجعلها تتفاعل على النقر
+  document.querySelectorAll('.arrow').forEach(arrow => {
+    arrow.addEventListener('click', (e) => {
+      // منع تفعيل حدث أي شيء آخر عند النقر على السهم
+      e.stopPropagation();
+      const faqItem = arrow.closest('.faq-item');
+      faqItem.classList.toggle('active');
+    });
+  });
+    </script>
+</body>
+</html>
