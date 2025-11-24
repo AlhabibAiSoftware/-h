@@ -13,26 +13,24 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    /* خلفية الثيم الأساسي: تدرج + صورة ثابتة */
-    background: linear-gradient(135deg, #1e3c72, #2a5298), url('img/kll.jpg') no-repeat center center fixed;
+    background: linear-gradient(135deg, #19c4c3, #b4debd), url(img/kll.jpg) no-repeat center center fixed;
     background-size: cover;
     overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
     color: #f0f0f5;
-    display: flex;
-    flex-direction: column;
 }
 
-/* لأن الهيدر ثابت، نحتاج إضافة padding أعلى الـ body محتوى (يمكن تخصيصه في الصفحة) */
 body {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 
-/* تحسين الشريط العلوي - هيدر مطابق للثيم الأساسي */
+/* تحسين الشريط العلوي - هيدر */
 header {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #80a1ba, #b4debd);
     width: 100%;
     position: fixed;
-    top: 0;
     z-index: 999;
     display: flex;
     justify-content: space-between;
@@ -44,24 +42,26 @@ header {
 }
 
 /* الشعار */
+/* تعديل الشعار ليصبح هادئ وأنيق */
 .logo {
     text-decoration: none;
-    color: #fef600; /* لون هادئ وجذاب */
+    color: #fff7dd; /* لون هادئ وجذاب - أزرق سماوي */
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 2em; /* تكبير بسيط */
     transition: 0.3s ease-in-out;
-    letter-spacing: 4px;
+    letter-spacing: 4px; /* زيادة المسافة بين الحروف لراحة العين */
+    font-family: 'Poppins', sans-serif;
 }
 
 .logo:hover {
     transform: scale(1.05);
-    color: #357ABD;
+    color: #07070757; /* تدرج أزرق أغمق */
 }
 
 /* القائمة */
 .navigation a {
-    color: #e0e0e0;
+    color: #000000;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;
@@ -75,7 +75,7 @@ header {
     position: absolute;
     width: 0;
     height: 2.5px;
-    background: #fcd535;
+    background: #fcf2d2;
     bottom: -6px;
     left: 0;
     transition: width 0.3s ease;
@@ -86,7 +86,7 @@ header {
 }
 
 .navigation a:hover {
-    color: #fcd535;
+    color: #000000;
 }
 
 /* الأقسام: نستخدم خلفية شبه شفافة مع Blurred backdrop */
@@ -127,27 +127,14 @@ h1, h2, h3 {
 }
 
 /* يمكن تخصيص عناوين معينة في القسم الرئيسي */
-.main h2 span {
+/* .main h2 span {
     display: inline-block;
     margin-top: 30px;
     color: #fcd535;
     font-size: 3.2em;
     font-weight: 800;
-    text-shadow:
-       0 0 10px #fcd535,
-       0 0 20px #fcd535,
-       0 0 30px #d4af37;
-    animation: glow 2.5s infinite alternate ease-in-out;
-}
 
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px #fcd535, 0 0 20px #fcd535, 0 0 30px #d4af37;
-    }
-    to {
-        text-shadow: 0 0 40px #d4af37, 0 0 60px #fcd535, 0 0 80px #fcd535;
-    }
-}
+} */
 
 /* الفقرات */
 p {
@@ -197,18 +184,7 @@ button:hover, .btn:hover, .main-btn:hover {
 }
 
 /* أيقونات التواصل */
-.social-icons a {
-    color: #fcd535;
-    font-size: 1.8em;
-    padding-right: 22px;
-    transition: 0.3s ease;
-    display: inline-block;
-}
 
-.social-icons a:hover {
-    color: #ffffff;
-    transform: scale(1.3) rotate(15deg);
-}
 
 /* الفوتر */
 footer {
@@ -246,61 +222,55 @@ footer {
 }
 
 @media (max-width: 576px) {
+
     header {
-        padding: 12px 25px;
+        padding: 14px 20px;
         flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
+        gap: 12px;
+        align-items: center;
+        backdrop-filter: blur(12px);
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
     }
 
     .logo {
-        font-size: 1.6em;
+        font-size: 1.8em;
+        letter-spacing: 2px;
+        text-align: center;
+        transition: 0.3s ease;
     }
 
     .navigation {
         width: 100%;
         display: flex;
+        justify-content: center;
+        gap: 12px;
         flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 15px;
+        padding-top: 6px;
     }
 
     .navigation a {
-        padding-left: 0;
+        padding: 10px 12px;
         font-size: 1em;
-        flex-grow: 1;
+        flex: 1 1 45%;
         text-align: center;
-        background: rgba(252, 213, 53, 0.15);
-        border-radius: 8px;
-        padding: 8px 0;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-        transition: background-color 0.3s ease;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        transition: all 0.35s ease;
     }
 
     .navigation a:hover {
-        background: #fcd535;
-        color: #1e1e1e;
-    }
-
-    section, .container {
-        padding: 60px 20px;
-        margin: 10px 15px;
-    }
-
-    .main h2 span {
-        font-size: 2.2em;
-    }
-
-    .main-btn, button, .btn {
-        width: 100%;
-        padding: 14px 0;
-        font-size: 1.2em;
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.24);
+        color: #000;
     }
 }
 
 /* عناوين وأقسام FAQ */
 .faq-container {
-    margin-top: 50px;
+    margin-top: 140px;
     background: rgba(30, 30, 50, 0.7);
     backdrop-filter: blur(8px);
     border-radius: 18px;
@@ -313,7 +283,7 @@ footer {
     text-align: center;
     font-size: 2.4rem;
     margin-bottom: 30px;
-    color: #fcd535;
+    color: #000000;
     letter-spacing: 1.5px;
 }
 
@@ -327,7 +297,7 @@ footer {
     cursor: pointer;
     position: relative;
     padding-right: 30px;
-    color: #fcd535;
+    color: #c4ffe5;
     font-weight: 600;
 }
 
@@ -335,7 +305,7 @@ footer {
     position: absolute;
     right: 0;
     top: 2px;
-    color: #fcd535;
+    color: #b4debd;
     font-weight: 900;
     transition: transform 0.3s ease;
 }
